@@ -16,8 +16,16 @@ const someModule = protectedRequire('some-module');
 ```
 
 
-## verbose
+## Verbose
 pass `verbose` param to get error details.
 ```
 const someModule = protectedRequire('some-module', true);
+```
+
+## Live-reload tip
+RequireJS is caching required module. To get fresh file version each time, use following code: 
+```
+var componentsPath = 'some-module';
+delete require.cache[componentsPath];
+protectedRequire(componentsPath);
 ```
